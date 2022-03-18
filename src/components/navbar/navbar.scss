@@ -1,0 +1,144 @@
+//import the mixin to use here
+@import "../../app.scss";
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 99;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.5s ease-in-out;
+
+  &.show {
+    opacity: 1;
+    visibility: visible;
+    transition: 0.5s ease-in-out;
+  }
+}
+
+.navbar {
+  color: white;
+  font-size: 14px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+  background: linear-gradient(to top, transparent 0%, rgba(0, 0, 0, 0.3) 50%);
+  transition: all 0.5s ease;
+
+  //   adding a custom class
+  &.scrolled {
+    background-color: var(--main-color);
+    transition: all 0.5s ease;
+  }
+
+  .container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 70px;
+
+    .left {
+      display: flex;
+      align-items: center;
+      position: relative;
+
+      .left-container {
+        display: flex;
+        align-items: center;
+
+        & > *:not(:last-child) {
+          margin-right: 10px;
+        }
+
+        @include mobile {
+          position: absolute;
+          width: 100%;
+          top: 120%;
+          left: 50%;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          background-color: dimgray;
+          z-index: 999;
+        }
+
+        a {
+          font-size: 1rem;
+          margin-bottom: 10px;
+        }
+      }
+
+      img {
+        height: 40px;
+        margin-right: 40px;
+      }
+
+      span {
+        margin-right: 20px;
+        cursor: pointer;
+      }
+    }
+
+    .right {
+      display: flex;
+      align-items: center;
+
+      .icon {
+        margin: 0 10px;
+        cursor: pointer;
+      }
+      img {
+        width: 30px;
+        height: 30px;
+        border-radius: 15px;
+        object-fit: cover;
+      }
+
+      .profile {
+        position: relative;
+
+        img {
+          margin-right: 10px;
+        }
+        .options {
+          display: none;
+          background-color: var(--main-color);
+          border-radius: 5px;
+        }
+
+        span {
+          padding: 10px;
+          cursor: pointer;
+        }
+
+        &:hover {
+          .options {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+
+            @include mobile {
+              left: -20px;
+            }
+          }
+        }
+      }
+    }
+
+    .harmburger {
+      display: none;
+      cursor: pointer;
+      @include mobile {
+        display: block;
+      }
+    }
+  }
+}

@@ -1,0 +1,103 @@
+.login {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  background-image: url("https://assets.nflxext.com/ffe/siteui/vlv3/eb482c64-e879-4e88-9ddc-d839cb7d1232/6341529a-9c04-4275-af2c-69f1374a1090/NG-en-20220131-popsignuptwoweeks-perspective_alpha_website_small.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: white;
+  z-index: 99;
+
+  &::after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0%;
+    background-color: black;
+    opacity: 0.6;
+    z-index: -1;
+  }
+
+  .top {
+    .wrapper {
+      padding: 20px 50px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .logo-container {
+        height: 40px;
+
+        img {
+          object-fit: cover;
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+  }
+
+  .container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+
+    form {
+      width: 300px;
+      height: 350px;
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      border-radius: 5px;
+      background: var(--main-color);
+
+      & > * {
+        margin-bottom: 10px;
+      }
+
+      input {
+        height: 40px;
+        border-radius: 5px;
+        background-color: grey;
+        color: white;
+        padding-left: 10px;
+
+        &:focus {
+          outline: none;
+        }
+
+        &::placeholder {
+          color: lightgrey;
+        }
+      }
+
+      button {
+        height: 40px;
+        border-radius: 5px;
+        cursor: pointer;
+        border: none;
+        color: white;
+        background-color: red;
+        font-size: 18px;
+        font-weight: 500;
+      }
+
+      span {
+        color: lightgrey;
+        b {
+          color: white;
+        }
+      }
+    }
+  }
+}
