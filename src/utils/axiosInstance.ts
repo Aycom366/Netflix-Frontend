@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const instance = axios.create({
-  baseURL: "https://ay-netflix.herokuapp.com",
+  baseURL: "web-production-cef1.up.railway.app",
   headers: {
     Authorization: `Bearer ${localStorage.getItem("userToken")}`,
   },
